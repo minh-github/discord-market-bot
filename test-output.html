@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Market Bot – Test kết quả</title>
+	<style>
+		* { box-sizing: border-box; }
+		body { font-family: system-ui, sans-serif; max-width: 900px; margin: 0 auto; padding: 1.5rem; background: #1a1a2e; color: #eaeaea; }
+		h1 { font-size: 1.4rem; margin-bottom: 1rem; color: #7dd3fc; }
+		.block { background: #16213e; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+		.block h2 { font-size: 1rem; margin: 0 0 0.75rem; color: #a5b4fc; }
+		table { width: 100%; border-collapse: collapse; }
+		td { padding: 0.35rem 0.5rem; vertical-align: top; }
+		td.label { color: #94a3b8; width: 40%; }
+		pre { margin: 0; font-size: 0.85em; overflow-x: auto; }
+		.muted { color: #64748b; font-size: 0.9rem; margin: 0.5rem 0 0; }
+		.err { color: #f87171; }
+		.chart-img { max-width: 100%; height: auto; border-radius: 6px; margin-top: 0.5rem; }
+	</style>
+</head>
+<body>
+	<h1>📊 Market Bot – Kết quả test local</h1>
+	<section class="block"><h2>Format (không cần API)</h2><div class="content"><table>
+				<tr><td class="label">formatMoney(1234.5)</td><td>1,234.5 USD</td></tr>
+				<tr><td class="label">formatVndShort(85e6)</td><td>85 million VND</td></tr>
+				<tr><td class="label">formatIndex(1250.5)</td><td>1,250.50</td></tr>
+				<tr><td class="label">formatGrowthPercent(2.5)</td><td>+2.50%</td></tr>
+				<tr><td class="label">get24hChangePercent(110, 100)</td><td>10</td></tr>
+				<tr><td class="label">getWeeklyHighLow([...], 'btc_usd')</td><td>{"high":45,"low":40}</td></tr>
+			</table></div></section>
+<section class="block"><h2>Snapshot hiện tại (API)</h2><div class="content"><table>
+					<tr><td class="label">date</td><td>2026-03-16</td></tr>
+					<tr><td class="label">btc_usd</td><td>73,763 USD</td></tr>
+					<tr><td class="label">gold_sjc_sell_vnd</td><td>18.3 million VND</td></tr>
+					<tr><td class="label">vnindex</td><td>1,683.06</td></tr>
+					<tr><td class="label">dcds_nav</td><td>101.906,47 NAV</td></tr>
+					
+				</table><p class="muted">(đã saveSnapshot)</p></div></section>
+<section class="block"><h2>Snapshot ngày 2026-03-15</h2><div class="content"><table>
+					<tr><td class="label">btc_usd</td><td>71,217.1 USD</td></tr>
+					<tr><td class="label">gold_sjc_sell_vnd</td><td>N/A</td></tr>
+					<tr><td class="label">vnindex</td><td>N/A</td></tr>
+					<tr><td class="label">dcds_nav</td><td>N/A</td></tr>
+				</table></div></section>
+<section class="block"><h2>Previous day + 24h</h2><div class="content"><table>
+					<tr><td class="label">prev date</td><td>2026-03-15</td></tr>
+					<tr><td class="label">btc 24h %</td><td>3.57%</td></tr>
+				</table></div></section>
+<section class="block"><h2>Chart daily (BTC, 7 ngày)</h2><div class="content"><p>growthPercent: 7.747206644279209</p><p><img src="https://quickchart.io/chart?width=1000&height=450&c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%2210%2F03%22%2C%2216%2F03%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22BTC%20%2F%20USD%22%2C%22data%22%3A%5B68459.31537095344%2C73763%5D%2C%22fill%22%3Atrue%2C%22backgroundColor%22%3A%22rgba(247%2C%20147%2C%2026%2C%200.1)%22%2C%22borderColor%22%3A%22rgb(247%2C%20147%2C%2026)%22%2C%22borderWidth%22%3A2.5%2C%22tension%22%3A0.3%2C%22pointRadius%22%3A3%2C%22pointHoverRadius%22%3A5%7D%5D%7D%2C%22options%22%3A%7B%22responsive%22%3Atrue%2C%22plugins%22%3A%7B%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22top%22%7D%2C%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22BTC%20%2F%20USD%20%E2%80%94%202%20ng%C3%A0y%20%E2%80%A2%20%2B7.75%25%22%2C%22font%22%3A%7B%22size%22%3A16%7D%7D%7D%2C%22scales%22%3A%7B%22x%22%3A%7B%22grid%22%3A%7B%22display%22%3Afalse%7D%2C%22ticks%22%3A%7B%22maxRotation%22%3A45%2C%22minRotation%22%3A0%2C%22maxTicksLimit%22%3A10%7D%7D%2C%22y%22%3A%7B%22beginAtZero%22%3Afalse%2C%22grid%22%3A%7B%22color%22%3A%22rgba(0%2C0%2C0%2C0.06)%22%7D%2C%22ticks%22%3A%7B%22callback%22%3A%22function(v)%7Breturn%20typeof%20v%3D%3D%3D'number'%3F(v%3E%3D1e3%3F(v%2F1e3).toFixed(1)%2B'k'%3Av)%3Av%7D%22%2C%22maxTicksLimit%22%3A8%7D%7D%7D%2C%22layout%22%3A%7B%22padding%22%3A%7B%22top%22%3A12%2C%22right%22%3A16%2C%22bottom%22%3A8%2C%22left%22%3A8%7D%7D%7D%7D" alt="chart" class="chart-img" /></p></div></section>
+<section class="block"><h2>Chart intraday (VN-Index, 1h)</h2><div class="content"><p>growthPercent: -0.7014956193398094</p><p><img src="https://quickchart.io/chart?width=1000&height=450&c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%2209%3A00%22%2C%2210%3A00%22%2C%2211%3A00%22%2C%2213%3A00%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22VN-Index%22%2C%22data%22%3A%5B1694.95%2C1692.87%2C1691.74%2C1683.06%5D%2C%22fill%22%3Atrue%2C%22backgroundColor%22%3A%22rgba(59%2C%20130%2C%20246%2C%200.1)%22%2C%22borderColor%22%3A%22rgb(59%2C%20130%2C%20246)%22%2C%22borderWidth%22%3A2.5%2C%22tension%22%3A0.3%2C%22pointRadius%22%3A3%2C%22pointHoverRadius%22%3A5%7D%5D%7D%2C%22options%22%3A%7B%22responsive%22%3Atrue%2C%22plugins%22%3A%7B%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22top%22%7D%2C%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22VN-Index%20%E2%80%94%20trong%20ng%C3%A0y%20(khung%201%20gi%E1%BB%9D)%20%E2%80%A2%20-0.70%25%22%2C%22font%22%3A%7B%22size%22%3A16%7D%7D%7D%2C%22scales%22%3A%7B%22x%22%3A%7B%22grid%22%3A%7B%22display%22%3Afalse%7D%2C%22ticks%22%3A%7B%22maxRotation%22%3A45%2C%22minRotation%22%3A0%2C%22maxTicksLimit%22%3A12%7D%7D%2C%22y%22%3A%7B%22beginAtZero%22%3Afalse%2C%22grid%22%3A%7B%22color%22%3A%22rgba(0%2C0%2C0%2C0.06)%22%7D%2C%22ticks%22%3A%7B%22callback%22%3A%22function(v)%7Breturn%20typeof%20v%3D%3D%3D'number'%3F(v%3E%3D1e3%3F(v%2F1e3).toFixed(1)%2B'k'%3Av)%3Av%7D%22%2C%22maxTicksLimit%22%3A8%7D%7D%7D%2C%22layout%22%3A%7B%22padding%22%3A%7B%22top%22%3A12%2C%22right%22%3A16%2C%22bottom%22%3A8%2C%22left%22%3A8%7D%7D%7D%7D" alt="intraday" class="chart-img" /></p></div></section>
+</body>
+</html>

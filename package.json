@@ -1,0 +1,21 @@
+{
+  "name": "discord-market-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy": "node src/deploy-commands.js",
+    "test": "node --test test/*.test.js",
+    "test:local": "node src/scripts/test-local.js",
+    "test:gold": "node src/scripts/test-gold.js",
+    "test:ui": "node src/scripts/test-local-ui.js"
+  },
+  "dependencies": {
+    "asciichart": "^1.5.25",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "discord.js": "^14.16.0",
+    "dotenv": "^16.4.7",
+    "node-cron": "^4.0.5"
+  }
+}

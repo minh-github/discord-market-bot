@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2026-03-16",
+    "btc_usd": 73098,
+    "gold_sjc_sell_vnd": 182800000,
+    "gold_sjc_buy_vnd": 179800000,
+    "vnindex": 1693.21,
+    "dcds_nav": 101906.47,
+    "dcds_diff_pct": -3.33,
+    "errors": {
+      "btc": null,
+      "gold": null,
+      "vnindex": null,
+      "dcds": null
+    }
+  }
+]
